@@ -149,10 +149,7 @@ fn parse_code_block_lang(i: &str) -> IResult<&str, String> {
 mod tests {
     use super::*;
     
-    use nom::{
-        error::ErrorKind,
-        Err::Error
-    };
+    use nom::{error::Error, error::ErrorKind, Err as NomErr};
 
     #[test]
     fn test_parse_italics() {

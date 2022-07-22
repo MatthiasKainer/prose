@@ -57,12 +57,9 @@ fn translate_ordered_list(lines: Vec<MarkdownText>) -> String {
     format!("<ol>{}</ol>", translate_list_elements(lines.to_vec()))
 }
 
-// fn translate_code(code: MarkdownText) -> String {
-//     format!("<code>{}</code>", translate_text(code))
-// }
 
 fn translate_codeblock(lang: String, code: String) -> String {
-    format!("<pre><code class=\"lang-{}\">{}</code></pre>", lang, code)
+    format!("<pre><code class=\"EnlighterJSRAW\" data-enlighter-language=\"{}\" data-enlighter-theme=\"dracula\">{}</code></pre>", lang, code)
 }
 
 fn translate_line(text: MarkdownText) -> String {
@@ -216,7 +213,7 @@ foobar.singularize(\'phenomena\') # returns \'phenomenon\'
                 )
             ),
             String::from(
-                r#"<pre><code class="lang-python">
+                r#"<pre><code class="EnlighterJSRAW" data-enlighter-language="python" data-enlighter-theme="dracula">
 import foobar
 
 foobar.pluralize(\'word\') # returns \'words\'
